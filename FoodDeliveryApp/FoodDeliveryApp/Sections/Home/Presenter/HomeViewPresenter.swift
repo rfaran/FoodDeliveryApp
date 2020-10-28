@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import BadgeControl
 
 class HomeViewPresenter {
 
@@ -19,6 +20,7 @@ class HomeViewPresenter {
 }
 
 extension HomeViewPresenter: HomeViewPresentation {
+    
     func setupOnboardingSlides(on sliderScrollview: UIScrollView){
         
         // hardcoded sldier for three images for now        
@@ -34,6 +36,16 @@ extension HomeViewPresenter: HomeViewPresentation {
             slides[i].frame = CGRect(x: sliderScrollview.frame.width * CGFloat(i), y: 0, width: sliderScrollview.frame.width, height: sliderScrollview.frame.height)
             sliderScrollview.addSubview(slides[i])
         }
+    }
+    
+    func addCartButton(on cartView: UIView) {
+        let badge = BadgeController(for: cartView)
+        badge.centerPosition = .custom(x: Double(cartView.frame.width), y: 16)
+        badge.addOrReplaceCurrent(with: "2", animated: true)
+        badge.badgeTextFont = UIFont.systemFont(ofSize: 24)
+        badge.badgeBackgroundColor = UIColor.lightGray
+        badge.badgeHeight = 40
+
     }
 }
 

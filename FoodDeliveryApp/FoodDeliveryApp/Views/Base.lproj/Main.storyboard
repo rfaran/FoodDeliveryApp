@@ -66,10 +66,30 @@
                                             <constraint firstItem="G2L-6F-ydj" firstAttribute="leading" secondItem="65P-iP-RYN" secondAttribute="leading" id="rmd-v0-z64"/>
                                         </constraints>
                                     </scrollView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYT-VT-0QK">
+                                        <rect key="frame" x="314" y="636" width="60" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVR-QX-chY">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <state key="normal" image="cart"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="sVR-QX-chY" firstAttribute="top" secondItem="iYT-VT-0QK" secondAttribute="top" id="30G-zc-h4u"/>
+                                            <constraint firstAttribute="bottom" secondItem="sVR-QX-chY" secondAttribute="bottom" id="78L-nd-sJf"/>
+                                            <constraint firstAttribute="width" secondItem="iYT-VT-0QK" secondAttribute="height" multiplier="1:1" id="G1q-nQ-MLO"/>
+                                            <constraint firstAttribute="width" constant="60" id="NRn-DP-qJi"/>
+                                            <constraint firstAttribute="trailing" secondItem="sVR-QX-chY" secondAttribute="trailing" id="mrl-EU-NCa"/>
+                                            <constraint firstItem="sVR-QX-chY" firstAttribute="leading" secondItem="iYT-VT-0QK" secondAttribute="leading" id="yds-pq-Jah"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="65P-iP-RYN" firstAttribute="top" secondItem="6wy-LG-qv2" secondAttribute="top" id="HRd-ef-I7r"/>
+                                    <constraint firstAttribute="bottom" secondItem="iYT-VT-0QK" secondAttribute="bottom" constant="40" id="K9x-z7-Ipn"/>
+                                    <constraint firstAttribute="trailing" secondItem="iYT-VT-0QK" secondAttribute="trailing" constant="40" id="NuC-5s-7li"/>
                                     <constraint firstAttribute="trailing" secondItem="65P-iP-RYN" secondAttribute="trailing" id="h8z-pa-YnN"/>
                                     <constraint firstAttribute="bottom" secondItem="65P-iP-RYN" secondAttribute="bottom" id="vvC-Hl-xq0"/>
                                     <constraint firstItem="65P-iP-RYN" firstAttribute="leading" secondItem="6wy-LG-qv2" secondAttribute="leading" id="wea-32-8Mr"/>
@@ -87,6 +107,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="MKl-Cj-Vnf"/>
                     <connections>
+                        <outlet property="cartView" destination="iYT-VT-0QK" id="ZsB-D1-g1g"/>
                         <outlet property="sliderPageControl" destination="PKd-se-auY" id="r5d-45-ZlD"/>
                         <outlet property="sliderScrollview" destination="z6d-jo-j3w" id="RDS-cW-Jhe"/>
                     </connections>
@@ -96,4 +117,7 @@
             <point key="canvasLocation" x="400.00000000000006" y="99.776785714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cart" width="2555" height="2555"/>
+    </resources>
 </document>

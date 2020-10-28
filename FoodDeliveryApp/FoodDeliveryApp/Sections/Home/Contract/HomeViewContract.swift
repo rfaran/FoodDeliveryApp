@@ -16,6 +16,7 @@ protocol HomeViewView: ViperView {
 protocol HomeViewPresentation: ViperPresenter {
     // TODO: Declare presentation methods
     func setupOnboardingSlides(on sliderScrollview: UIScrollView)
+    func addCartButton(on cartView: UIView)
 }
 
 protocol HomeViewUseCase: ViperInteractor {

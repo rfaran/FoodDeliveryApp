@@ -8,5 +8,7 @@ target 'FoodDeliveryApp' do
   # Pods for FoodDeliveryApp
 
 pod 'Moya'
+pod 'BadgeControl'
+
 
 end

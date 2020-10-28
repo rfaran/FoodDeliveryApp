@@ -8,12 +8,14 @@
 
 import Foundation
 import UIKit
+import BadgeControl
 
 class HomeViewController: BaseViewController {
 
     @IBOutlet weak var sliderScrollview: UIScrollView!
     @IBOutlet weak var sliderPageControl: UIPageControl!
-
+    @IBOutlet weak var cartView: UIView!
+    
     // MARK: Properties
 
     var presenter: HomeViewPresentation?
@@ -22,6 +24,7 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.addCartButton(on: cartView)
         presenter?.setupOnboardingSlides(on: sliderScrollview)
         sliderScrollview.delegate = self
     }
