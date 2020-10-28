@@ -5,22 +5,26 @@ PODS:
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
+  - ObjectMapper (4.2.0)
 
 DEPENDENCIES:
   - BadgeControl
   - Moya
+  - ObjectMapper
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - BadgeControl
     - Moya
+    - ObjectMapper
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   BadgeControl: 67036e7f586930bba15084dbf89ebce7aa2f2bc2
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
 
-PODFILE CHECKSUM: 1f088ca3454a13b46801ad950980f0fe5bc177e1
+PODFILE CHECKSUM: eaac17a3532b0829cd0405803a37cffb1877a142
 
 COCOAPODS: 1.9.3

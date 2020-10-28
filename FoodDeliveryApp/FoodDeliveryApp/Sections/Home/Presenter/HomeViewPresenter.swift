@@ -45,10 +45,16 @@ extension HomeViewPresenter: HomeViewPresentation {
         badge.badgeTextFont = UIFont.systemFont(ofSize: 24)
         badge.badgeBackgroundColor = UIColor.lightGray
         badge.badgeHeight = 40
-
+    }
+    
+    func loadProducts() {        
+        // Load data from network
+        interactor?.loadProducts()
     }
 }
 
 extension HomeViewPresenter: HomeViewUseCaseOutput {
-    // TODO: implement interactor output methods
+    func fetchedProducts(products: Products) {
+        view?.fetchedProducts(products: products)
+    }
 }

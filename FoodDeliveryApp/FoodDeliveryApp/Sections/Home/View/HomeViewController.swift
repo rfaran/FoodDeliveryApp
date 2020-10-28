@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import BadgeControl
 
 class HomeViewController: BaseViewController {
 
@@ -24,9 +23,10 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.loadProducts()
         presenter?.addCartButton(on: cartView)
         presenter?.setupOnboardingSlides(on: sliderScrollview)
-        sliderScrollview.delegate = self
+        sliderScrollview.delegate = self        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +41,9 @@ class HomeViewController: BaseViewController {
 }
 
 extension HomeViewController: HomeViewView {
-    // TODO: implement view output methods
+    func fetchedProducts(products: Products) {
+        print("Products fetched: \(products)")
+    }
 }
 
 extension HomeViewController: UIScrollViewDelegate {

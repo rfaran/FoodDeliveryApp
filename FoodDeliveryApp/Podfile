@@ -9,6 +9,6 @@ target 'FoodDeliveryApp' do
 
 pod 'Moya'
 pod 'BadgeControl'
-
+pod 'ObjectMapper'
 
 end

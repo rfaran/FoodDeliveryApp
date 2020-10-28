@@ -11,6 +11,8 @@
 		352C60812549932900B782B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352C607F2549932900B782B8 /* Main.storyboard */; };
 		352C60832549932A00B782B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352C60822549932A00B782B8 /* Assets.xcassets */; };
 		352C60862549932A00B782B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352C60842549932A00B782B8 /* LaunchScreen.storyboard */; };
+		3565CF5F2549E922009E5284 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3565CF5E2549E922009E5284 /* APIServices.swift */; };
+		3565CF682549F4F8009E5284 /* ProductsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3565CF672549F4F8009E5284 /* ProductsResponseModel.swift */; };
 		35E111B82549A2600075EC72 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111B72549A2600075EC72 /* UIView.swift */; };
 		35E111BB2549A6440075EC72 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111BA2549A6440075EC72 /* Slide.swift */; };
 		35E111BE2549A66E0075EC72 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E111BD2549A66E0075EC72 /* Slide.xib */; };
@@ -38,6 +40,8 @@
 		352C60822549932A00B782B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		352C60852549932A00B782B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		352C60872549932A00B782B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3565CF5E2549E922009E5284 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		3565CF672549F4F8009E5284 /* ProductsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsResponseModel.swift; sourceTree = "<group>"; };
 		35E111B72549A2600075EC72 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		35E111BA2549A6440075EC72 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		35E111BD2549A66E0075EC72 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 		352C60782549932900B782B8 /* FoodDeliveryApp */ = {
 			isa = PBXGroup;
 			children = (
+				3565CF5D2549E8BD009E5284 /* Network Layer */,
 				35E111EB2549B0CD0075EC72 /* Base */,
 				35E111B62549A2500075EC72 /* Extensions */,
 				352C60962549967D00B782B8 /* Sections */,
@@ -126,6 +131,14 @@
 				35E111AF25499AE90075EC72 /* Home */,
 			);
 			path = Sections;
+			sourceTree = "<group>";
+		};
+		3565CF5D2549E8BD009E5284 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				3565CF5E2549E922009E5284 /* APIServices.swift */,
+			);
+			path = "Network Layer";
 			sourceTree = "<group>";
 		};
 		35E111AF25499AE90075EC72 /* Home */ = {
@@ -193,6 +206,7 @@
 		35E111DB2549AFB30075EC72 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				3565CF672549F4F8009E5284 /* ProductsResponseModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -385,8 +399,10 @@
 				35E111B82549A2600075EC72 /* UIView.swift in Sources */,
 				35E111F32549B0EC0075EC72 /* ViperInteractor.swift in Sources */,
 				35E111E22549AFB30075EC72 /* HomeViewContract.swift in Sources */,
+				3565CF682549F4F8009E5284 /* ProductsResponseModel.swift in Sources */,
 				35E111F22549B0EC0075EC72 /* ViperView.swift in Sources */,
 				35E111E62549AFB30075EC72 /* HomeViewPresenter.swift in Sources */,
+				3565CF5F2549E922009E5284 /* APIServices.swift in Sources */,
 				35E112052549B3410075EC72 /* BaseTableViewCell.swift in Sources */,
 				352C607A2549932900B782B8 /* AppDelegate.swift in Sources */,
 				35E111F42549B0EC0075EC72 /* ViperRouter.swift in Sources */,
