@@ -3,15 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		352C607A2549932900B782B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C60792549932900B782B8 /* AppDelegate.swift */; };
-		352C607E2549932900B782B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C607D2549932900B782B8 /* ViewController.swift */; };
 		352C60812549932900B782B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352C607F2549932900B782B8 /* Main.storyboard */; };
 		352C60832549932A00B782B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352C60822549932A00B782B8 /* Assets.xcassets */; };
 		352C60862549932A00B782B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352C60842549932A00B782B8 /* LaunchScreen.storyboard */; };
+		35E111B82549A2600075EC72 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111B72549A2600075EC72 /* UIView.swift */; };
+		35E111BB2549A6440075EC72 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111BA2549A6440075EC72 /* Slide.swift */; };
+		35E111BE2549A66E0075EC72 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E111BD2549A66E0075EC72 /* Slide.xib */; };
+		35E111DF2549AFB30075EC72 /* HomeViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111D12549AFB30075EC72 /* HomeViewInteractor.swift */; };
+		35E111E12549AFB30075EC72 /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111D52549AFB30075EC72 /* HomeViewRouter.swift */; };
+		35E111E22549AFB30075EC72 /* HomeViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111D72549AFB30075EC72 /* HomeViewContract.swift */; };
+		35E111E32549AFB30075EC72 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111D92549AFB30075EC72 /* HomeViewController.swift */; };
+		35E111E62549AFB30075EC72 /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111DE2549AFB30075EC72 /* HomeViewPresenter.swift */; };
+		35E111F12549B0EC0075EC72 /* ViperPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111ED2549B0EC0075EC72 /* ViperPresenter.swift */; };
+		35E111F22549B0EC0075EC72 /* ViperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111EE2549B0EC0075EC72 /* ViperView.swift */; };
+		35E111F32549B0EC0075EC72 /* ViperInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111EF2549B0EC0075EC72 /* ViperInteractor.swift */; };
+		35E111F42549B0EC0075EC72 /* ViperRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111F02549B0EC0075EC72 /* ViperRouter.swift */; };
+		35E111F72549B1F90075EC72 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111F62549B1F90075EC72 /* UIViewController.swift */; };
+		35E111FF2549B2D80075EC72 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111FE2549B2D80075EC72 /* BaseViewController.swift */; };
+		35E112022549B3200075EC72 /* BaseRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E112012549B3200075EC72 /* BaseRowModel.swift */; };
+		35E112052549B3410075EC72 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E112042549B3410075EC72 /* BaseTableViewCell.swift */; };
 		AED83976CFF9994D6B03AFC1 /* Pods_FoodDeliveryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4DD09AB0D68F5E9AAC3E85 /* Pods_FoodDeliveryApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,11 +34,26 @@
 		02463476F651A320EC6ED7E8 /* Pods-FoodDeliveryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodDeliveryApp.debug.xcconfig"; path = "Target Support Files/Pods-FoodDeliveryApp/Pods-FoodDeliveryApp.debug.xcconfig"; sourceTree = "<group>"; };
 		352C60762549932900B782B8 /* FoodDeliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodDeliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		352C60792549932900B782B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		352C607D2549932900B782B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		352C60802549932900B782B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		352C60822549932A00B782B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		352C60852549932A00B782B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		352C60872549932A00B782B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35E111B72549A2600075EC72 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		35E111BA2549A6440075EC72 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		35E111BD2549A66E0075EC72 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		35E111D12549AFB30075EC72 /* HomeViewInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewInteractor.swift; sourceTree = "<group>"; };
+		35E111D52549AFB30075EC72 /* HomeViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
+		35E111D72549AFB30075EC72 /* HomeViewContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewContract.swift; sourceTree = "<group>"; };
+		35E111D92549AFB30075EC72 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		35E111DE2549AFB30075EC72 /* HomeViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
+		35E111ED2549B0EC0075EC72 /* ViperPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViperPresenter.swift; sourceTree = "<group>"; };
+		35E111EE2549B0EC0075EC72 /* ViperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViperView.swift; sourceTree = "<group>"; };
+		35E111EF2549B0EC0075EC72 /* ViperInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViperInteractor.swift; sourceTree = "<group>"; };
+		35E111F02549B0EC0075EC72 /* ViperRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViperRouter.swift; sourceTree = "<group>"; };
+		35E111F62549B1F90075EC72 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		35E111FE2549B2D80075EC72 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		35E112012549B3200075EC72 /* BaseRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRowModel.swift; sourceTree = "<group>"; };
+		35E112042549B3410075EC72 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		AE4DD09AB0D68F5E9AAC3E85 /* Pods_FoodDeliveryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodDeliveryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E708708D5671F0647F73BCA3 /* Pods-FoodDeliveryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodDeliveryApp.release.xcconfig"; path = "Target Support Files/Pods-FoodDeliveryApp/Pods-FoodDeliveryApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +91,8 @@
 		352C60782549932900B782B8 /* FoodDeliveryApp */ = {
 			isa = PBXGroup;
 			children = (
+				35E111EB2549B0CD0075EC72 /* Base */,
+				35E111B62549A2500075EC72 /* Extensions */,
 				352C60962549967D00B782B8 /* Sections */,
 				352C60952549967100B782B8 /* Views */,
 				352C60942549966700B782B8 /* Resources */,
@@ -90,9 +122,126 @@
 		352C60962549967D00B782B8 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				352C607D2549932900B782B8 /* ViewController.swift */,
+				35E111B025499B0A0075EC72 /* Cart */,
+				35E111AF25499AE90075EC72 /* Home */,
 			);
 			path = Sections;
+			sourceTree = "<group>";
+		};
+		35E111AF25499AE90075EC72 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				35E111D62549AFB30075EC72 /* Contract */,
+				35E111DB2549AFB30075EC72 /* Entity */,
+				35E111D02549AFB30075EC72 /* Interactor */,
+				35E111DD2549AFB30075EC72 /* Presenter */,
+				35E111D42549AFB30075EC72 /* Router */,
+				35E111D82549AFB30075EC72 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		35E111B025499B0A0075EC72 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		35E111B62549A2500075EC72 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				35E111B72549A2600075EC72 /* UIView.swift */,
+				35E111F62549B1F90075EC72 /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		35E111D02549AFB30075EC72 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				35E111D12549AFB30075EC72 /* HomeViewInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		35E111D42549AFB30075EC72 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				35E111D52549AFB30075EC72 /* HomeViewRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		35E111D62549AFB30075EC72 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				35E111D72549AFB30075EC72 /* HomeViewContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		35E111D82549AFB30075EC72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				35E112102549B3D50075EC72 /* Slides */,
+				35E111D92549AFB30075EC72 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		35E111DB2549AFB30075EC72 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		35E111DD2549AFB30075EC72 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				35E111DE2549AFB30075EC72 /* HomeViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		35E111EB2549B0CD0075EC72 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				35E111FD2549B2C90075EC72 /* Views */,
+				35E111EC2549B0D50075EC72 /* Viper */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		35E111EC2549B0D50075EC72 /* Viper */ = {
+			isa = PBXGroup;
+			children = (
+				35E111EF2549B0EC0075EC72 /* ViperInteractor.swift */,
+				35E111ED2549B0EC0075EC72 /* ViperPresenter.swift */,
+				35E111F02549B0EC0075EC72 /* ViperRouter.swift */,
+				35E111EE2549B0EC0075EC72 /* ViperView.swift */,
+			);
+			path = Viper;
+			sourceTree = "<group>";
+		};
+		35E111FD2549B2C90075EC72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35E111FE2549B2D80075EC72 /* BaseViewController.swift */,
+				35E112012549B3200075EC72 /* BaseRowModel.swift */,
+				35E112042549B3410075EC72 /* BaseTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35E112102549B3D50075EC72 /* Slides */ = {
+			isa = PBXGroup;
+			children = (
+				35E111BA2549A6440075EC72 /* Slide.swift */,
+				35E111BD2549A66E0075EC72 /* Slide.xib */,
+			);
+			path = Slides;
 			sourceTree = "<group>";
 		};
 		55F09D23009CEC115B03DCFE /* Frameworks */ = {
@@ -109,7 +258,6 @@
 				02463476F651A320EC6ED7E8 /* Pods-FoodDeliveryApp.debug.xcconfig */,
 				E708708D5671F0647F73BCA3 /* Pods-FoodDeliveryApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -175,6 +323,7 @@
 				352C60862549932A00B782B8 /* LaunchScreen.storyboard in Resources */,
 				352C60832549932A00B782B8 /* Assets.xcassets in Resources */,
 				352C60812549932900B782B8 /* Main.storyboard in Resources */,
+				35E111BE2549A66E0075EC72 /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,8 +376,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				352C607E2549932900B782B8 /* ViewController.swift in Sources */,
+				35E111F72549B1F90075EC72 /* UIViewController.swift in Sources */,
+				35E112022549B3200075EC72 /* BaseRowModel.swift in Sources */,
+				35E111F12549B0EC0075EC72 /* ViperPresenter.swift in Sources */,
+				35E111E32549AFB30075EC72 /* HomeViewController.swift in Sources */,
+				35E111DF2549AFB30075EC72 /* HomeViewInteractor.swift in Sources */,
+				35E111FF2549B2D80075EC72 /* BaseViewController.swift in Sources */,
+				35E111B82549A2600075EC72 /* UIView.swift in Sources */,
+				35E111F32549B0EC0075EC72 /* ViperInteractor.swift in Sources */,
+				35E111E22549AFB30075EC72 /* HomeViewContract.swift in Sources */,
+				35E111F22549B0EC0075EC72 /* ViperView.swift in Sources */,
+				35E111E62549AFB30075EC72 /* HomeViewPresenter.swift in Sources */,
+				35E112052549B3410075EC72 /* BaseTableViewCell.swift in Sources */,
 				352C607A2549932900B782B8 /* AppDelegate.swift in Sources */,
+				35E111F42549B0EC0075EC72 /* ViperRouter.swift in Sources */,
+				35E111BB2549A6440075EC72 /* Slide.swift in Sources */,
+				35E111E12549AFB30075EC72 /* HomeViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
