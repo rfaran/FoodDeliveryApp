@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.2.2)
+  - BadgeControl (1.2.1)
+  - Kingfisher (5.15.6):
+    - Kingfisher/Core (= 5.15.6)
+  - Kingfisher/Core (5.15.6)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+
+DEPENDENCIES:
+  - BadgeControl
+  - Kingfisher
+  - Moya
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - BadgeControl
+    - Kingfisher
+    - Moya
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  BadgeControl: 67036e7f586930bba15084dbf89ebce7aa2f2bc2
+  Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+
+PODFILE CHECKSUM: 092b782dd6d7c67a6ffc65f510d10d2ca2ed5fcd
+
+COCOAPODS: 1.9.3
