@@ -11,6 +11,7 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var productsTableView: UITableView!
     @IBOutlet weak var sliderScrollview: UIScrollView!
     @IBOutlet weak var sliderPageControl: UIPageControl!
@@ -19,7 +20,10 @@ class HomeViewController: BaseViewController {
     // MARK: Properties
 
     var presenter: HomeViewPresentation?
-
+    var products: Products?
+    var selectedCategoryIndex = 0
+    var animationStyle: UITableView.RowAnimation = .automatic
+    
     // MARK: Lifecycle
 
     override func viewDidLoad() {
@@ -42,22 +46,27 @@ class HomeViewController: BaseViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-}
-
-extension HomeViewController: HomeViewView {
-    func fetchedProducts(products: Products) {
-        if let data = products.data, data.count > 0 {
-            let selectedIndex = 0
-            if let products = data[selectedIndex].products {
+    
+    func reloadProducts() {
+        categoryCollectionView.reloadData()
+        if let data = products?.data, data.count > 0 {
+            if let products = data[selectedCategoryIndex].products {
                 // we do have data, now asks for presented to generate table view items for selected index.
                 presenter?.getTableRowModels(fromData: products)
             }
         }
     }
-    
+}
+
+extension HomeViewController: HomeViewView {
+    func fetchedProducts(products: Products) {
+        self.products = products
+        reloadProducts()
+    }
+        
     func onSetTableRowModels(rowModels: [BaseRowModel]) {
         tableViewItems = rowModels
-        productsTableView.reloadData()
+        productsTableView.reloadSections(IndexSet(integer: 0), with: animationStyle)
     }
 }
 
@@ -65,6 +74,30 @@ extension HomeViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/sliderScrollview.frame.width)
         sliderPageControl.currentPage = Int(pageIndex)
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    // This collection view is for navigation style "Outdated Windows phone navigation tiles"
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return products?.data?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CategoryCollectionViewCell.self), for: indexPath as IndexPath) as! CategoryCollectionViewCell
+        cell.titleLbl.text = products?.data?[indexPath.item].productCategory
+        
+        cell.titleLbl.textColor = indexPath.item == selectedCategoryIndex ? .darkGray : .lightGray
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        animationStyle = selectedCategoryIndex < indexPath.item ? UITableView.RowAnimation.left: UITableView.RowAnimation.right
+        selectedCategoryIndex = indexPath.item
+        reloadProducts()
     }
 }
 

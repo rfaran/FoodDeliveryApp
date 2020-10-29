@@ -17,6 +17,8 @@ class HomeViewPresenter {
     weak var view: HomeViewView?
     var router: HomeViewWireframe?
     var interactor: HomeViewUseCase?
+    var badge: BadgeController?
+    var cartItems: [Product]?
 }
 
 extension HomeViewPresenter: HomeViewPresentation {
@@ -39,12 +41,12 @@ extension HomeViewPresenter: HomeViewPresentation {
     }
     
     func addCartButton(on cartView: UIView) {
-        let badge = BadgeController(for: cartView)
-        badge.centerPosition = .custom(x: Double(cartView.frame.width), y: 16)
-        badge.addOrReplaceCurrent(with: "2", animated: true)
-        badge.badgeTextFont = UIFont.systemFont(ofSize: 24)
-        badge.badgeBackgroundColor = UIColor.lightGray
-        badge.badgeHeight = 40
+        badge = BadgeController(for: cartView)
+        badge?.centerPosition = .custom(x: Double(cartView.frame.width), y: 16)
+        badge?.addOrReplaceCurrent(animated: true)
+        badge?.badgeTextFont = UIFont.systemFont(ofSize: 24)
+        badge?.badgeBackgroundColor = UIColor.lightGray
+        badge?.badgeHeight = 40
     }
     
     func loadProducts() {        

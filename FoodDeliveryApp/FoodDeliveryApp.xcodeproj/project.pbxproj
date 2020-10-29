@@ -16,6 +16,7 @@
 		3565CF70254AB00D009E5284 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3565CF6E254AB00D009E5284 /* ItemTableViewCell.swift */; };
 		3565CF71254AB00D009E5284 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3565CF6F254AB00D009E5284 /* ItemTableViewCell.xib */; };
 		3565CF74254ABAD4009E5284 /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3565CF73254ABAD4009E5284 /* DynamicHeightTableView.swift */; };
+		3565CF92254AD6F0009E5284 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3565CF91254AD6F0009E5284 /* CategoryCollectionViewCell.swift */; };
 		35E111B82549A2600075EC72 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111B72549A2600075EC72 /* UIView.swift */; };
 		35E111BB2549A6440075EC72 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111BA2549A6440075EC72 /* Slide.swift */; };
 		35E111BE2549A66E0075EC72 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E111BD2549A66E0075EC72 /* Slide.xib */; };
@@ -48,6 +49,7 @@
 		3565CF6E254AB00D009E5284 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		3565CF6F254AB00D009E5284 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		3565CF73254ABAD4009E5284 /* DynamicHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTableView.swift; sourceTree = "<group>"; };
+		3565CF91254AD6F0009E5284 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		35E111B72549A2600075EC72 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		35E111BA2549A6440075EC72 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		35E111BD2549A66E0075EC72 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
@@ -156,6 +158,14 @@
 			path = ItemCell;
 			sourceTree = "<group>";
 		};
+		3565CF90254AD6D5009E5284 /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				3565CF91254AD6F0009E5284 /* CategoryCollectionViewCell.swift */,
+			);
+			path = CategoryCell;
+			sourceTree = "<group>";
+		};
 		35E111AF25499AE90075EC72 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +222,7 @@
 		35E111D82549AFB30075EC72 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3565CF90254AD6D5009E5284 /* CategoryCell */,
 				3565CF6D254AAFEA009E5284 /* ItemCell */,
 				35E112102549B3D50075EC72 /* Slides */,
 				35E111D92549AFB30075EC72 /* HomeViewController.swift */,
@@ -427,6 +438,7 @@
 				352C607A2549932900B782B8 /* AppDelegate.swift in Sources */,
 				35E111F42549B0EC0075EC72 /* ViperRouter.swift in Sources */,
 				35E111BB2549A6440075EC72 /* Slide.swift in Sources */,
+				3565CF92254AD6F0009E5284 /* CategoryCollectionViewCell.swift in Sources */,
 				35E111E12549AFB30075EC72 /* HomeViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

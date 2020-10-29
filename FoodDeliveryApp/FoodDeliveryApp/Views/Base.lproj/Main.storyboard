@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,16 +44,55 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIY-iy-mF3">
-                                                <rect key="frame" x="0.0" y="495.33333333333326" width="414" height="196"/>
+                                                <rect key="frame" x="0.0" y="495.33333333333326" width="414" height="190"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OB8-jh-ElV">
-                                                        <rect key="frame" x="30" y="30.000000000000057" width="354" height="36"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RA4-ai-q77">
+                                                        <rect key="frame" x="30" y="30.000000000000057" width="354" height="60"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="xV8-yz-kdz"/>
+                                                        </constraints>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="20" id="SRw-og-AUL">
+                                                            <size key="itemSize" width="120" height="50"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCollectionViewCell" id="XH1-OU-sWr" customClass="CategoryCollectionViewCell" customModule="FoodDeliveryApp" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="73" height="36"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XQl-yt-4HY">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="36"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0m-5i-NqE">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="73" height="36"/>
+                                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                                                            <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="N0m-5i-NqE" secondAttribute="trailing" id="E1F-ei-vYs"/>
+                                                                        <constraint firstItem="N0m-5i-NqE" firstAttribute="leading" secondItem="XQl-yt-4HY" secondAttribute="leading" id="Kfd-nn-580"/>
+                                                                        <constraint firstItem="N0m-5i-NqE" firstAttribute="top" secondItem="XQl-yt-4HY" secondAttribute="top" id="at2-cB-jUv"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="N0m-5i-NqE" secondAttribute="bottom" id="y5N-07-O2K"/>
+                                                                    </constraints>
+                                                                </collectionViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="titleLbl" destination="N0m-5i-NqE" id="jPP-6g-Mx9"/>
+                                                                </connections>
+                                                            </collectionViewCell>
+                                                        </cells>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="mhf-wc-mlw" id="4Lu-OP-VSZ"/>
+                                                            <outlet property="delegate" destination="mhf-wc-mlw" id="bJX-qV-DOs"/>
+                                                        </connections>
+                                                    </collectionView>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CNO-qn-DrR" customClass="DynamicHeightTableView" customModule="FoodDeliveryApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="96.000000000000057" width="414" height="100"/>
+                                                        <rect key="frame" x="0.0" y="90.000000000000057" width="414" height="100"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" placeholder="YES" id="cEC-ln-1lc"/>
@@ -65,13 +105,13 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="CNO-qn-DrR" firstAttribute="top" secondItem="RA4-ai-q77" secondAttribute="bottom" id="2LW-Kk-OP3"/>
                                                     <constraint firstAttribute="bottom" secondItem="CNO-qn-DrR" secondAttribute="bottom" id="AdQ-sL-2yD"/>
-                                                    <constraint firstItem="OB8-jh-ElV" firstAttribute="leading" secondItem="rIY-iy-mF3" secondAttribute="leading" constant="30" id="C7A-FW-fyD"/>
-                                                    <constraint firstItem="CNO-qn-DrR" firstAttribute="top" secondItem="OB8-jh-ElV" secondAttribute="bottom" constant="30" id="PKK-xD-dRm"/>
-                                                    <constraint firstAttribute="trailing" secondItem="OB8-jh-ElV" secondAttribute="trailing" constant="30" id="fmB-qh-oEz"/>
-                                                    <constraint firstItem="OB8-jh-ElV" firstAttribute="top" secondItem="rIY-iy-mF3" secondAttribute="top" constant="30" id="lPE-zY-Wgp"/>
+                                                    <constraint firstItem="RA4-ai-q77" firstAttribute="top" secondItem="rIY-iy-mF3" secondAttribute="top" constant="30" id="k3X-ux-Moc"/>
                                                     <constraint firstItem="CNO-qn-DrR" firstAttribute="leading" secondItem="rIY-iy-mF3" secondAttribute="leading" id="pv2-XV-V17"/>
                                                     <constraint firstAttribute="trailing" secondItem="CNO-qn-DrR" secondAttribute="trailing" id="uXW-ad-XqT"/>
+                                                    <constraint firstItem="RA4-ai-q77" firstAttribute="leading" secondItem="rIY-iy-mF3" secondAttribute="leading" constant="30" id="uzW-up-Vnv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="RA4-ai-q77" secondAttribute="trailing" constant="30" id="zov-h6-Wfw"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -134,6 +174,7 @@
                     <navigationItem key="navigationItem" id="MKl-Cj-Vnf"/>
                     <connections>
                         <outlet property="cartView" destination="iYT-VT-0QK" id="ZsB-D1-g1g"/>
+                        <outlet property="categoryCollectionView" destination="RA4-ai-q77" id="xu4-MV-ivW"/>
                         <outlet property="productsTableView" destination="CNO-qn-DrR" id="b01-1K-XYz"/>
                         <outlet property="sliderPageControl" destination="PKd-se-auY" id="r5d-45-ZlD"/>
                         <outlet property="sliderScrollview" destination="z6d-jo-j3w" id="RDS-cW-Jhe"/>
