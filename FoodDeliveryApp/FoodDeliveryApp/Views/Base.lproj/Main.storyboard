@@ -138,6 +138,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVR-QX-chY">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                 <state key="normal" image="cart"/>
+                                                <connections>
+                                                    <action selector="cartButtonTapped:" destination="mhf-wc-mlw" eventType="touchUpInside" id="5Bk-c8-26p"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

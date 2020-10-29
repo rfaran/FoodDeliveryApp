@@ -1,15 +1,15 @@
 //
-//  HomeViewRouter.swift
+//  CartRouter.swift
 //  FoodDeliveryApp
 //
-//  Created by Faran Rasheed on 28/10/2020.
+//  Created by Faran Rasheed on 30/10/2020.
 //  
 //
 
 import Foundation
 import UIKit
 
-class HomeViewRouter {
+class CartRouter {
 
     // MARK: Properties
 
@@ -17,11 +17,11 @@ class HomeViewRouter {
 
     // MARK: Static methods
 
-    static func setupModule() -> HomeViewController {
-        let viewController = HomeViewController.instantiate(fromAppStoryboard: .Main)
-        let presenter = HomeViewPresenter()
-        let router = HomeViewRouter()
-        let interactor = HomeViewInteractor()
+    static func setupModule() -> CartViewController {
+        let viewController = CartViewController.instantiate(fromAppStoryboard: .Main)
+        let presenter = CartPresenter()
+        let router = CartRouter()
+        let interactor = CartInteractor()
 
         viewController.presenter =  presenter
 
@@ -37,9 +37,6 @@ class HomeViewRouter {
     }
 }
 
-extension HomeViewRouter: HomeViewWireframe {
+extension CartRouter: CartWireframe {
     // TODO: Implement wireframe methods
-    func navigateToCartVC(cartItems: [Product]) {
-        
-    }
 }

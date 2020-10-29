@@ -57,6 +57,10 @@ class HomeViewController: BaseViewController {
             }
         }
     }
+    
+    @IBAction func cartButtonTapped(_ sender: Any) {
+        presenter?.cartButtonTapped()
+    }
 }
 
 extension HomeViewController: HomeViewView {

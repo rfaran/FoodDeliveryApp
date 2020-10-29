@@ -84,6 +84,10 @@ extension HomeViewPresenter: HomeViewPresentation {
             badge?.remove(animated: true)
         }
     }
+    
+    func cartButtonTapped() {
+        router?.navigateToCartVC(cartItems: cartItems)
+    }
 }
 
 extension HomeViewPresenter: HomeViewUseCaseOutput {
@@ -98,6 +102,8 @@ extension HomeViewPresenter: HomeViewUseCaseOutput {
 
 extension HomeViewPresenter: ProductTableViewCellDelegate {
     func addToCart(product: Product) {
+        
+        // For now we are storing cart items locally on this presenter, actual implementation would ofcourse vary.
         cartItems.append(product)
         updateCart()
     }

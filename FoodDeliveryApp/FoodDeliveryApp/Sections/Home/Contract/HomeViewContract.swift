@@ -22,6 +22,7 @@ protocol HomeViewPresentation: ViperPresenter {
     func setupCartView(cartView: UIView)
     func setupOnboardingSlides(on sliderScrollview: UIScrollView, withBannerResponseObj bannerResponseObj: Banners)
     func getTableRowModels(fromData: [Product])
+    func cartButtonTapped()
 }
 
 protocol HomeViewUseCase: ViperInteractor {
@@ -38,4 +39,5 @@ protocol HomeViewUseCaseOutput: class {
 
 protocol HomeViewWireframe: ViperRouter {
     // TODO: Declare wireframe methods
+    func navigateToCartVC(cartItems: [Product])
 }
