@@ -19,7 +19,7 @@ protocol HomeViewView: ViperView {
 protocol HomeViewPresentation: ViperPresenter {
     // TODO: Declare presentation methods
     func loadData()
-    func addCartButton(on cartView: UIView)
+    func setupCartView(cartView: UIView)
     func setupOnboardingSlides(on sliderScrollview: UIScrollView, withBannerResponseObj bannerResponseObj: Banners)
     func getTableRowModels(fromData: [Product])
 }

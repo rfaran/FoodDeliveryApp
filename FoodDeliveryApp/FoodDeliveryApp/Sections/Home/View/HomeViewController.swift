@@ -34,7 +34,7 @@ class HomeViewController: BaseViewController {
         
         // Setting up view and loading data
         presenter?.loadData()        
-        presenter?.addCartButton(on: cartView)
+        presenter?.setupCartView(cartView: cartView)
         sliderScrollview.delegate = self        
     }
     

@@ -19,7 +19,7 @@ class HomeViewPresenter {
     var router: HomeViewWireframe?
     var interactor: HomeViewUseCase?
     var badge: BadgeController?
-    var cartItems: [Product]?
+    var cartItems = [Product]()
 }
 
 extension HomeViewPresenter: HomeViewPresentation {
@@ -39,13 +39,14 @@ extension HomeViewPresenter: HomeViewPresentation {
         interactor?.loadProducts()
     }
     
-    func addCartButton(on cartView: UIView) {
+    func setupCartView(cartView: UIView) {
         badge = BadgeController(for: cartView)
         badge?.centerPosition = .custom(x: Double(cartView.frame.width), y: 16)
         badge?.addOrReplaceCurrent(animated: true)
         badge?.badgeTextFont = UIFont.systemFont(ofSize: 24)
         badge?.badgeBackgroundColor = UIColor.lightGray
         badge?.badgeHeight = 40
+        updateCart()
     }
     
     func setupOnboardingSlides(on sliderScrollview: UIScrollView, withBannerResponseObj bannerResponseObj: Banners) {
@@ -75,6 +76,14 @@ extension HomeViewPresenter: HomeViewPresentation {
         }
         view?.onSetTableRowModels(rowModels: rowModels)
     }
+    
+    private func updateCart() {
+        if cartItems.count > 0 {
+            badge?.addOrReplaceCurrent(with: "\(cartItems.count)", animated: true)
+        } else {
+            badge?.remove(animated: true)
+        }
+    }
 }
 
 extension HomeViewPresenter: HomeViewUseCaseOutput {
@@ -89,6 +98,7 @@ extension HomeViewPresenter: HomeViewUseCaseOutput {
 
 extension HomeViewPresenter: ProductTableViewCellDelegate {
     func addToCart(product: Product) {
-        print("did tap \(product.price)")
+        cartItems.append(product)
+        updateCart()
     }
 }
