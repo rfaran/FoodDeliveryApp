@@ -51,6 +51,15 @@ extension HomeViewPresenter: HomeViewPresentation {
         // Load data from network
         interactor?.loadProducts()
     }
+    
+    func getTableRowModels(fromData products: [Product]) {
+        var rowModels = [BaseRowModel]()
+        
+        for product in products {
+            rowModels.append(ItemTableViewCell.rowModel(model: product))
+        }
+        view?.onSetTableRowModels(rowModels: rowModels)
+    }
 }
 
 extension HomeViewPresenter: HomeViewUseCaseOutput {

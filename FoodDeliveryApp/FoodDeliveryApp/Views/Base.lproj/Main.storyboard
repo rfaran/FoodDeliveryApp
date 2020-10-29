@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,10 +43,35 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIY-iy-mF3">
-                                                <rect key="frame" x="0.0" y="495.33333333333326" width="414" height="1000"/>
+                                                <rect key="frame" x="0.0" y="495.33333333333326" width="414" height="196"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OB8-jh-ElV">
+                                                        <rect key="frame" x="30" y="30.000000000000057" width="354" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CNO-qn-DrR" customClass="DynamicHeightTableView" customModule="FoodDeliveryApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="96.000000000000057" width="414" height="100"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" placeholder="YES" id="cEC-ln-1lc"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="mhf-wc-mlw" id="RqU-MO-Ahg"/>
+                                                            <outlet property="delegate" destination="mhf-wc-mlw" id="Qvt-Qv-Emu"/>
+                                                        </connections>
+                                                    </tableView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="1000" id="9Ti-V7-Yu7"/>
+                                                    <constraint firstAttribute="bottom" secondItem="CNO-qn-DrR" secondAttribute="bottom" id="AdQ-sL-2yD"/>
+                                                    <constraint firstItem="OB8-jh-ElV" firstAttribute="leading" secondItem="rIY-iy-mF3" secondAttribute="leading" constant="30" id="C7A-FW-fyD"/>
+                                                    <constraint firstItem="CNO-qn-DrR" firstAttribute="top" secondItem="OB8-jh-ElV" secondAttribute="bottom" constant="30" id="PKK-xD-dRm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OB8-jh-ElV" secondAttribute="trailing" constant="30" id="fmB-qh-oEz"/>
+                                                    <constraint firstItem="OB8-jh-ElV" firstAttribute="top" secondItem="rIY-iy-mF3" secondAttribute="top" constant="30" id="lPE-zY-Wgp"/>
+                                                    <constraint firstItem="CNO-qn-DrR" firstAttribute="leading" secondItem="rIY-iy-mF3" secondAttribute="leading" id="pv2-XV-V17"/>
+                                                    <constraint firstAttribute="trailing" secondItem="CNO-qn-DrR" secondAttribute="trailing" id="uXW-ad-XqT"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -56,7 +82,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="G2L-6F-ydj" secondAttribute="trailing" id="6tB-r5-lk2"/>
-                                            <constraint firstAttribute="bottom" secondItem="rIY-iy-mF3" secondAttribute="bottom" id="8cv-J0-Nj4"/>
+                                            <constraint firstAttribute="bottom" secondItem="rIY-iy-mF3" secondAttribute="bottom" constant="16" id="8cv-J0-Nj4"/>
                                             <constraint firstAttribute="trailing" secondItem="rIY-iy-mF3" secondAttribute="trailing" id="Vuy-eA-Gce"/>
                                             <constraint firstItem="rIY-iy-mF3" firstAttribute="leading" secondItem="65P-iP-RYN" secondAttribute="leading" id="b8b-mg-PBM"/>
                                             <constraint firstItem="rIY-iy-mF3" firstAttribute="top" secondItem="G2L-6F-ydj" secondAttribute="bottom" constant="-20" id="bNG-ll-gsf"/>
@@ -67,7 +93,7 @@
                                         </constraints>
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYT-VT-0QK">
-                                        <rect key="frame" x="314" y="636" width="60" height="60"/>
+                                        <rect key="frame" x="284" y="606" width="60" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVR-QX-chY">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -88,8 +114,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="65P-iP-RYN" firstAttribute="top" secondItem="6wy-LG-qv2" secondAttribute="top" id="HRd-ef-I7r"/>
-                                    <constraint firstAttribute="bottom" secondItem="iYT-VT-0QK" secondAttribute="bottom" constant="40" id="K9x-z7-Ipn"/>
-                                    <constraint firstAttribute="trailing" secondItem="iYT-VT-0QK" secondAttribute="trailing" constant="40" id="NuC-5s-7li"/>
+                                    <constraint firstAttribute="bottom" secondItem="iYT-VT-0QK" secondAttribute="bottom" constant="70" id="K9x-z7-Ipn"/>
+                                    <constraint firstAttribute="trailing" secondItem="iYT-VT-0QK" secondAttribute="trailing" constant="70" id="NuC-5s-7li"/>
                                     <constraint firstAttribute="trailing" secondItem="65P-iP-RYN" secondAttribute="trailing" id="h8z-pa-YnN"/>
                                     <constraint firstAttribute="bottom" secondItem="65P-iP-RYN" secondAttribute="bottom" id="vvC-Hl-xq0"/>
                                     <constraint firstItem="65P-iP-RYN" firstAttribute="leading" secondItem="6wy-LG-qv2" secondAttribute="leading" id="wea-32-8Mr"/>
@@ -108,6 +134,7 @@
                     <navigationItem key="navigationItem" id="MKl-Cj-Vnf"/>
                     <connections>
                         <outlet property="cartView" destination="iYT-VT-0QK" id="ZsB-D1-g1g"/>
+                        <outlet property="productsTableView" destination="CNO-qn-DrR" id="b01-1K-XYz"/>
                         <outlet property="sliderPageControl" destination="PKd-se-auY" id="r5d-45-ZlD"/>
                         <outlet property="sliderScrollview" destination="z6d-jo-j3w" id="RDS-cW-Jhe"/>
                     </connections>
@@ -117,7 +144,15 @@
             <point key="canvasLocation" x="400.00000000000006" y="99.776785714285708"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="CNO-qn-DrR">
+            <size key="intrinsicContentSize" width="414" height="0.0"/>
+        </designable>
+    </designables>
     <resources>
-        <image name="cart" width="2555" height="2555"/>
+        <image name="cart" width="1280" height="1280"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

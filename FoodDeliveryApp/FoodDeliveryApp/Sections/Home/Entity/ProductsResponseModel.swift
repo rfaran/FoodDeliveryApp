@@ -24,4 +24,5 @@ struct Product : Codable{
     var productDetail : String?
     var productName : String?
     var productWeight : String?
+    var productImage : String?
 }

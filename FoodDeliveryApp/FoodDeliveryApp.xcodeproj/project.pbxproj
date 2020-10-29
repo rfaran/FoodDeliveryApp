@@ -13,6 +13,9 @@
 		352C60862549932A00B782B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352C60842549932A00B782B8 /* LaunchScreen.storyboard */; };
 		3565CF5F2549E922009E5284 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3565CF5E2549E922009E5284 /* APIServices.swift */; };
 		3565CF682549F4F8009E5284 /* ProductsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3565CF672549F4F8009E5284 /* ProductsResponseModel.swift */; };
+		3565CF70254AB00D009E5284 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3565CF6E254AB00D009E5284 /* ItemTableViewCell.swift */; };
+		3565CF71254AB00D009E5284 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3565CF6F254AB00D009E5284 /* ItemTableViewCell.xib */; };
+		3565CF74254ABAD4009E5284 /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3565CF73254ABAD4009E5284 /* DynamicHeightTableView.swift */; };
 		35E111B82549A2600075EC72 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111B72549A2600075EC72 /* UIView.swift */; };
 		35E111BB2549A6440075EC72 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E111BA2549A6440075EC72 /* Slide.swift */; };
 		35E111BE2549A66E0075EC72 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E111BD2549A66E0075EC72 /* Slide.xib */; };
@@ -42,6 +45,9 @@
 		352C60872549932A00B782B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3565CF5E2549E922009E5284 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		3565CF672549F4F8009E5284 /* ProductsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsResponseModel.swift; sourceTree = "<group>"; };
+		3565CF6E254AB00D009E5284 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		3565CF6F254AB00D009E5284 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		3565CF73254ABAD4009E5284 /* DynamicHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTableView.swift; sourceTree = "<group>"; };
 		35E111B72549A2600075EC72 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		35E111BA2549A6440075EC72 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		35E111BD2549A66E0075EC72 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
@@ -141,6 +147,15 @@
 			path = "Network Layer";
 			sourceTree = "<group>";
 		};
+		3565CF6D254AAFEA009E5284 /* ItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				3565CF6E254AB00D009E5284 /* ItemTableViewCell.swift */,
+				3565CF6F254AB00D009E5284 /* ItemTableViewCell.xib */,
+			);
+			path = ItemCell;
+			sourceTree = "<group>";
+		};
 		35E111AF25499AE90075EC72 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +212,7 @@
 		35E111D82549AFB30075EC72 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3565CF6D254AAFEA009E5284 /* ItemCell */,
 				35E112102549B3D50075EC72 /* Slides */,
 				35E111D92549AFB30075EC72 /* HomeViewController.swift */,
 			);
@@ -245,6 +261,7 @@
 				35E111FE2549B2D80075EC72 /* BaseViewController.swift */,
 				35E112012549B3200075EC72 /* BaseRowModel.swift */,
 				35E112042549B3410075EC72 /* BaseTableViewCell.swift */,
+				3565CF73254ABAD4009E5284 /* DynamicHeightTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +354,7 @@
 				352C60862549932A00B782B8 /* LaunchScreen.storyboard in Resources */,
 				352C60832549932A00B782B8 /* Assets.xcassets in Resources */,
 				352C60812549932900B782B8 /* Main.storyboard in Resources */,
+				3565CF71254AB00D009E5284 /* ItemTableViewCell.xib in Resources */,
 				35E111BE2549A66E0075EC72 /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +412,7 @@
 				35E112022549B3200075EC72 /* BaseRowModel.swift in Sources */,
 				35E111F12549B0EC0075EC72 /* ViperPresenter.swift in Sources */,
 				35E111E32549AFB30075EC72 /* HomeViewController.swift in Sources */,
+				3565CF70254AB00D009E5284 /* ItemTableViewCell.swift in Sources */,
 				35E111DF2549AFB30075EC72 /* HomeViewInteractor.swift in Sources */,
 				35E111FF2549B2D80075EC72 /* BaseViewController.swift in Sources */,
 				35E111B82549A2600075EC72 /* UIView.swift in Sources */,
@@ -401,6 +420,7 @@
 				35E111E22549AFB30075EC72 /* HomeViewContract.swift in Sources */,
 				3565CF682549F4F8009E5284 /* ProductsResponseModel.swift in Sources */,
 				35E111F22549B0EC0075EC72 /* ViperView.swift in Sources */,
+				3565CF74254ABAD4009E5284 /* DynamicHeightTableView.swift in Sources */,
 				35E111E62549AFB30075EC72 /* HomeViewPresenter.swift in Sources */,
 				3565CF5F2549E922009E5284 /* APIServices.swift in Sources */,
 				35E112052549B3410075EC72 /* BaseTableViewCell.swift in Sources */,

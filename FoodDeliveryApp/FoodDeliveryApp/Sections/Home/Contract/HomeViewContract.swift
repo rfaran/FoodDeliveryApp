@@ -12,6 +12,7 @@ import UIKit
 protocol HomeViewView: ViperView {
     // TODO: Declare view methods
     func fetchedProducts(products: Products)
+    func onSetTableRowModels(rowModels : [BaseRowModel])
 }
 
 protocol HomeViewPresentation: ViperPresenter {
@@ -19,6 +20,7 @@ protocol HomeViewPresentation: ViperPresenter {
     func setupOnboardingSlides(on sliderScrollview: UIScrollView)
     func addCartButton(on cartView: UIView)
     func loadProducts()
+    func getTableRowModels(fromData: [Product])
 }
 
 protocol HomeViewUseCase: ViperInteractor {

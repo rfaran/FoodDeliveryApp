@@ -31,21 +31,11 @@ extension BaseViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = tableViewItems[indexPath.row]
-        
-        // Check Storyboard cell
         if let cell = tableView.dequeueReusableCell(withIdentifier: item.rowCellIdentifier) as? BaseTableViewCell {
             cell.updateCell(rowModel: item)
             cell.delegate = item.delegate
             return cell
         }
-        
-        // Check Nib cell
-        if let cellFromNib = tableView.dequeueReusableCell(withIdentifier: item.rowCellIdentifier, for: indexPath) as? BaseTableViewCell {
-            cellFromNib.updateCell(rowModel: item)
-            return cellFromNib
-        }
-        
         return UITableViewCell()
     }
 }
-
