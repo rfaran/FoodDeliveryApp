@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-protocol ItemTableViewCellDelegate {
+protocol ProductTableViewCellDelegate {
     func addToCart(product: Product)
 }
 
@@ -37,15 +37,15 @@ class ProductTableViewCell: BaseTableViewCell {
         }
     }
     
-    class func rowModel(model: Product, delegate: ItemTableViewCellDelegate) -> BaseRowModel {
+    class func rowModel(model: Product, delegate: ProductTableViewCellDelegate) -> BaseRowModel {
         let rowModel = BaseRowModel()
-        rowModel.rowCellIdentifier = "ItemTableViewCell"
+        rowModel.rowCellIdentifier = String(describing: ProductTableViewCell.self)
         rowModel.rowValue = model
         rowModel.delegate = delegate as AnyObject
         return rowModel
     }
     
     @IBAction func addToCartButtonTapped(_ sender: Any) {
-        (delegate as? ItemTableViewCellDelegate)?.addToCart(product: product!)
+        (delegate as? ProductTableViewCellDelegate)?.addToCart(product: product!)
     }
 }

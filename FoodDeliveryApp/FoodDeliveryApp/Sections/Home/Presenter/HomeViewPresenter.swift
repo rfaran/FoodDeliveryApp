@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import BadgeControl
+import Kingfisher
 
 class HomeViewPresenter {
 
@@ -23,21 +24,19 @@ class HomeViewPresenter {
 
 extension HomeViewPresenter: HomeViewPresentation {
     
-    func setupOnboardingSlides(on sliderScrollview: UIScrollView){
-        
-        // hardcoded sldier for three images for now        
-        var slides:[Slide] = [];
-        for i in 1...3 {
-            let slide: Slide = UIView.fromNib()
-            slide.sliderImageView.image = UIImage(named: "ic_onboarding_\(i)")
-            slides.append(slide)
-        }
-        
-        sliderScrollview.contentSize = CGSize(width: sliderScrollview.frame.width * CGFloat(slides.count), height: sliderScrollview.frame.height)
-        for i in 0 ..< slides.count {
-            slides[i].frame = CGRect(x: sliderScrollview.frame.width * CGFloat(i), y: 0, width: sliderScrollview.frame.width, height: sliderScrollview.frame.height)
-            sliderScrollview.addSubview(slides[i])
-        }
+    func loadData() {
+        loadBanner()
+        loadProducts()
+    }
+    
+    private func loadBanner() {
+        // Load banner data from network.
+        interactor?.loadBanner()
+    }
+    
+    private func loadProducts() {
+        // Load data from network
+        interactor?.loadProducts()
     }
     
     func addCartButton(on cartView: UIView) {
@@ -49,23 +48,47 @@ extension HomeViewPresenter: HomeViewPresentation {
         badge?.badgeHeight = 40
     }
     
-    func loadProducts() {        
-        // Load data from network
-        interactor?.loadProducts()
+    func setupOnboardingSlides(on sliderScrollview: UIScrollView, withBannerResponseObj bannerResponseObj: Banners) {
+
+        if let bannersArray = bannerResponseObj.banners, bannersArray.count > 0 {
+            var slides:[Slide] = [];
+            for bannerUrlStr in bannersArray {
+                let slide: Slide = UIView.fromNib()
+                slide.sliderImageView.kf.setImage(with: URL(string: bannerUrlStr))
+                slides.append(slide)
+            }
+            
+            sliderScrollview.contentSize = CGSize(width: sliderScrollview.frame.width * CGFloat(slides.count), height: sliderScrollview.frame.height)
+            for i in 0 ..< slides.count {
+                slides[i].frame = CGRect(x: sliderScrollview.frame.width * CGFloat(i), y: 0, width: sliderScrollview.frame.width, height: sliderScrollview.frame.height)
+                sliderScrollview.addSubview(slides[i])
+            }
+        }
     }
+
     
     func getTableRowModels(fromData products: [Product]) {
         var rowModels = [BaseRowModel]()
         
         for product in products {
-            rowModels.append(ItemTableViewCell.rowModel(model: product))
+            rowModels.append(ProductTableViewCell.rowModel(model: product, delegate: self))
         }
         view?.onSetTableRowModels(rowModels: rowModels)
     }
 }
 
 extension HomeViewPresenter: HomeViewUseCaseOutput {
-    func fetchedProducts(products: Products) {
-        view?.fetchedProducts(products: products)
+    func fetchedProducts(productsResponseObj: Products) {
+        view?.fetchedProducts(productsResponseObj: productsResponseObj)
+    }
+    
+    func fetchedBanner(bannerResponseObj: Banners) {
+        view?.fetchedBanners(bannerResponseObj: bannerResponseObj)
+    }
+}
+
+extension HomeViewPresenter: ProductTableViewCellDelegate {
+    func addToCart(product: Product) {
+        print("did tap \(product.price)")
     }
 }

@@ -11,26 +11,29 @@ import UIKit
 
 protocol HomeViewView: ViperView {
     // TODO: Declare view methods
-    func fetchedProducts(products: Products)
+    func fetchedBanners(bannerResponseObj: Banners)
+    func fetchedProducts(productsResponseObj: Products)
     func onSetTableRowModels(rowModels : [BaseRowModel])
 }
 
 protocol HomeViewPresentation: ViperPresenter {
     // TODO: Declare presentation methods
-    func setupOnboardingSlides(on sliderScrollview: UIScrollView)
+    func loadData()
     func addCartButton(on cartView: UIView)
-    func loadProducts()
+    func setupOnboardingSlides(on sliderScrollview: UIScrollView, withBannerResponseObj bannerResponseObj: Banners)
     func getTableRowModels(fromData: [Product])
 }
 
 protocol HomeViewUseCase: ViperInteractor {
     // TODO: Declare use case methods
     func loadProducts()
+    func loadBanner()
 }
 
 protocol HomeViewUseCaseOutput: class {
     // TODO: Declare interactor output methods
-    func fetchedProducts(products: Products)
+    func fetchedProducts(productsResponseObj: Products)
+    func fetchedBanner(bannerResponseObj: Banners)
 }
 
 protocol HomeViewWireframe: ViperRouter {

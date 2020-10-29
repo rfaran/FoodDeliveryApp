@@ -23,11 +23,22 @@ extension HomeViewInteractor: HomeViewUseCase {
             switch result {
                 case let .success(moyaResponse):
                     let products = try? (JSONDecoder().decode(Products.self, from: moyaResponse.data))
-                    self.output?.fetchedProducts(products: products!)
+                    self.output?.fetchedProducts(productsResponseObj: products!)
                 case let .failure(error):
                     print(error)
             }
         }
-
+    }
+    
+    func loadBanner() {
+        mockAPIProvider.request(.fetchBanners) { result in
+            switch result {
+                case let .success(moyaResponse):
+                    let banners = try? (JSONDecoder().decode(Banners.self, from: moyaResponse.data))
+                    self.output?.fetchedBanner(bannerResponseObj: banners!)
+                case let .failure(error):
+                    print(error)
+            }
+        }
     }
 }

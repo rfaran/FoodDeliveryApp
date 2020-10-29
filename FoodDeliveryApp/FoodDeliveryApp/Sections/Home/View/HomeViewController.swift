@@ -20,7 +20,7 @@ class HomeViewController: BaseViewController {
     // MARK: Properties
 
     var presenter: HomeViewPresentation?
-    var products: Products?
+    var productsResponseObj: Products?
     var selectedCategoryIndex = 0
     var animationStyle: UITableView.RowAnimation = .automatic
     
@@ -29,11 +29,12 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        productsTableView.register(UINib(nibName: String(describing: ItemTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ItemTableViewCell.self))
+        // Registering product table view cell
+        productsTableView.register(UINib(nibName: String(describing: ProductTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ProductTableViewCell.self))
         
-        presenter?.loadProducts()
+        // Setting up view and loading data
+        presenter?.loadData()        
         presenter?.addCartButton(on: cartView)
-        presenter?.setupOnboardingSlides(on: sliderScrollview)
         sliderScrollview.delegate = self        
     }
     
@@ -48,10 +49,10 @@ class HomeViewController: BaseViewController {
     }
     
     func reloadProducts() {
+        // Reloading the view based on user selection.
         categoryCollectionView.reloadData()
-        if let data = products?.data, data.count > 0 {
+        if let data = productsResponseObj?.data, data.count > 0 {
             if let products = data[selectedCategoryIndex].products {
-                // we do have data, now asks for presented to generate table view items for selected index.
                 presenter?.getTableRowModels(fromData: products)
             }
         }
@@ -59,8 +60,13 @@ class HomeViewController: BaseViewController {
 }
 
 extension HomeViewController: HomeViewView {
-    func fetchedProducts(products: Products) {
-        self.products = products
+    
+    func fetchedBanners(bannerResponseObj: Banners) {
+        presenter?.setupOnboardingSlides(on: sliderScrollview, withBannerResponseObj: bannerResponseObj)
+    }
+    
+    func fetchedProducts(productsResponseObj: Products) {
+        self.productsResponseObj = productsResponseObj
         reloadProducts()
     }
         
@@ -82,12 +88,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     // This collection view is for navigation style "Outdated Windows phone navigation tiles"
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return products?.data?.count ?? 0
+        return productsResponseObj?.data?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CategoryCollectionViewCell.self), for: indexPath as IndexPath) as! CategoryCollectionViewCell
-        cell.titleLbl.text = products?.data?[indexPath.item].productCategory
+        cell.titleLbl.text = productsResponseObj?.data?[indexPath.item].productCategory
         
         cell.titleLbl.textColor = indexPath.item == selectedCategoryIndex ? .darkGray : .lightGray
         
@@ -95,9 +101,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        animationStyle = selectedCategoryIndex < indexPath.item ? UITableView.RowAnimation.left: UITableView.RowAnimation.right
-        selectedCategoryIndex = indexPath.item
-        reloadProducts()
+        if selectedCategoryIndex != indexPath.item {
+            animationStyle = selectedCategoryIndex < indexPath.item ? UITableView.RowAnimation.left: UITableView.RowAnimation.right
+            selectedCategoryIndex = indexPath.item
+            reloadProducts()
+        }
     }
 }
 
