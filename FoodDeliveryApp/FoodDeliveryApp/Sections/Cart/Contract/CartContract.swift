@@ -10,10 +10,12 @@ import Foundation
 
 protocol CartView: ViperView {
     // TODO: Declare view methods
+    func onSetTableRowModels(rowModels : [BaseRowModel])
 }
 
 protocol CartPresentation: ViperPresenter {
     // TODO: Declare presentation methods
+    func getTableRowModels(fromData products: [Product])
 }
 
 protocol CartUseCase: ViperInteractor {

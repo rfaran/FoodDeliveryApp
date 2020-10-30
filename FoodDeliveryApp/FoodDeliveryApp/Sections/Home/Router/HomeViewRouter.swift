@@ -40,6 +40,7 @@ class HomeViewRouter {
 extension HomeViewRouter: HomeViewWireframe {
     // TODO: Implement wireframe methods
     func navigateToCartVC(cartItems: [Product]) {
-        
+        let cartViewController = CartRouter.setupModule(withCartItems: cartItems) 
+        view?.navigationController?.present(cartViewController, animated: true, completion: nil)
     }
 }
