@@ -18,7 +18,17 @@ class CartPresenter {
 }
 
 extension CartPresenter: CartPresentation {
-    // TODO: implement presentation methods
+
+    func getTableRowModels(fromData products: [Product]) {
+        var rowModels = [BaseRowModel]()
+        var totalPrice = 0
+        for product in products {
+            rowModels.append(CartProductTableViewCell.rowModel(model: product))
+            totalPrice += product.price ?? 0
+        }
+        rowModels.append(CartTotalTableViewCell.rowModel(totalPrice: totalPrice, currency: "usd"))
+        view?.onSetTableRowModels(rowModels: rowModels)
+    }
 }
 
 extension CartPresenter: CartUseCaseOutput {

@@ -89,7 +89,7 @@ extension HomeViewController: UIScrollViewDelegate {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    // This collection view is for navigation style "Outdated Windows phone navigation tiles"
+    // This collection view is for navigation style "Outdated Windows phone navigation tile style"
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return productsResponseObj?.data?.count ?? 0

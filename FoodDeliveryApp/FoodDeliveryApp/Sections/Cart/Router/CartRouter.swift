@@ -17,8 +17,9 @@ class CartRouter {
 
     // MARK: Static methods
 
-    static func setupModule() -> CartViewController {
+    static func setupModule(withCartItems cartItems: [Product]?) -> CartViewController {
         let viewController = CartViewController.instantiate(fromAppStoryboard: .Main)
+        viewController.cartItems = cartItems
         let presenter = CartPresenter()
         let router = CartRouter()
         let interactor = CartInteractor()

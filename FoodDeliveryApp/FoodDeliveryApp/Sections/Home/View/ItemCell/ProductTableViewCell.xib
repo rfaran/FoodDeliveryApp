@@ -23,7 +23,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0b-Ny-fA1">
                                 <rect key="frame" x="0.0" y="0.0" width="533" height="280"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_onboarding_1" translatesAutoresizingMaskIntoConstraints="NO" id="47b-VN-6Kf">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="47b-VN-6Kf">
                                         <rect key="frame" x="0.0" y="0.0" width="533" height="250"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="73m-DS-PjY"/>
@@ -148,7 +148,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_onboarding_1" width="199" height="373.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

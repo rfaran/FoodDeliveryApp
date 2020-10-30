@@ -12,16 +12,20 @@ import UIKit
 class CartViewController: BaseViewController {
 
     // MARK: Properties
-
+    @IBOutlet weak var cartTableView: UITableView!
+    var cartItems: [Product]?
     var presenter: CartPresentation?
 
     // MARK: Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.getTableRowModels(fromData: cartItems!)
     }
 }
 
 extension CartViewController: CartView {
-    // TODO: implement view output methods
+    func onSetTableRowModels(rowModels: [BaseRowModel]) {
+        tableViewItems = rowModels
+        cartTableView.reloadData()
+    }
 }

@@ -15,7 +15,7 @@ enum APIServices {
 
 extension APIServices: TargetType {
     
-    var baseURL: URL { return URL(string: "https://api.myservice.com")! }
+    var baseURL: URL { return URL(string: "https://api.foodDelivery.com")! }
     
     var path: String {
         switch self {
@@ -23,7 +23,7 @@ extension APIServices: TargetType {
             return "/products/"
         
         case .fetchBanners:
-            return "/products/"
+            return "/banners/"
         }
     }
     
@@ -42,6 +42,7 @@ extension APIServices: TargetType {
         }
     }
 
+    // Mock data
     var sampleData: Data {
         switch self {
         case .fetchProducts:
